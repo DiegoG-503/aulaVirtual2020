@@ -1,0 +1,230 @@
+
+<div class="container-fluid">
+  <div class="row" style="margin-top: 100px; margin-bottom: 20px;">
+      <div class="col-lg-12">
+          <h2>Archivos</h2>
+          <hr>
+          <div class="container">
+            <div class="card">
+              <div class="card-header">
+            <h5>Enviar archivos</h5>
+              </div>
+              <div class="card-body">
+                <form role="form"  action="" method="POST">
+                  <div class="form-group">
+                    <label>Nombre del archivo</label>
+                    <input type="text" class="form-control" name="archivo" >
+                </div>
+                <div class="form-group">
+                    <label>Archivo</label>
+                    <div class="file-loading">
+                        <input type="file" class="file" id="input-file" name="input" multiple>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label>Usuario</label>
+                  <select class="form-control">
+                    <option>Profesor</option>
+                    <option>Alumno</option>
+                  </select>
+                </div>
+                <input type="submit" class="btn btn-info" value="Enviar">
+            </form>
+            </div>
+            </div>
+            </div>
+          <br>
+          <div class="card">
+          <div class="card-header bg-light">
+              Recepcion de archivos
+          </div>
+          <div class="card-body">
+              <div class="col-lg-12">
+                <table class="table table-bordered" style="width: 100%;" id="tabla">
+                  <thead class="thead-light">
+                      <tr>
+                          <th scope="col">Nombre del archivo</th>
+                          <th scope="col">Categor&iacute;a</th>
+                          <th scope="col">Usuario</th>
+                          <th scope="col">Fecha</th>
+                          <th scope="col">Operaciones</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>planificacion.xlsx</td>
+                          <td>Planificacion</td>
+                          <td>Profesor</td>
+                          <td>20-02-2020</td>
+                          <td>
+                              <a href="#" type="button" class="btn btn-success"><span class="fa fa-download"></span> Descargar</a>
+                              <a style="margin-left: 10px;" href="#" type="button" data-toggle="modal" data-target="#eliminar" class="btn btn-danger"><span class="fa fa-times"></span> Eliminar</a>
+                          </td>
+                      </tr>
+                      
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!-- MODAL -->
+<div class="modal fade" id="eliminar" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <form role="form"  action="" method="POST">
+      <div class="modal-body">
+          <h2 class="text-center">¿Esta seguro que desea eliminar este archivo?</h2>
+        </div>
+            <div class="modal-footer">
+              <input type="hidden" name="disable">
+              <input type="hidden" name="id" value="">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+              <input type="submit" class="btn btn-danger" value="Eliminar">
+            </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<!--<div class="container">
+    <div class="row" style="margin: 10px;">
+        <div class="col-lg-12">
+            <h2 class="text-center">Gesti&oacute;n acad&eacute;mica</h2>
+            <div class="card">
+                <div class="card-header bg-light">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agregar"><i class="fa fa-file"></i> Subir archivo</button>
+                </div>
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <table class="table table-bordered" style="width: 100%;" id="tabla">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Nombre del archivo</th>
+                                    <th scope="col">Categor&iacute;a</th>
+                                    <th scope="col">Ruta</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Operaciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>planificacion.xlsx</td>
+                                    <td>Planificacion</td>
+                                    <td></td>
+                                    <td>20-02-2020</td>
+                                    <td style="text-align: center;">
+                                        <a href="#" type="button" data-toggle="modal" data-target="#actualizar" class="btn btn-warning"><span class="fa fa-undo"></span></a>
+                                        <a href="#" type="button" data-toggle="modal" data-target="#eliminar" class="btn btn-danger"><span class="fa fa-times"></span></a>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title" id="exampleModalLabel"><span class="fa fa-file-plus"></span> Subir archivo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form role="form"  action="">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Subir archivos</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="customFile" name="filename">
+                      <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Categor&iacute;a</label>
+                    <select class="form-control">
+                        <option>Planificaci&oacute;n</option>
+                        <option>Manual de capacitaci&oacute;n</option>
+                        <option>Plantillas</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <input type="submit" class="btn btn-info" value="Guardar">
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+  <div class="modal fade" id="actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning text-white">
+          <h5 class="modal-title" id="exampleModalLabel"><span class="fa fa-undo"></span> Actualizar archivo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <form role="form"  action="" method="POST">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Subir archivos</label>
+                    <div class="file-loading">
+                        <input type="file" class="file" name="file" multiple />
+                    </div>
+                </div>    
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    <input type="submit" class="btn btn-warning" value="Actualizar">
+                </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="exampleModalLabel">¿Est&aacute; seguro que desea eliminar este archivo?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <form role="form"  action="" method="POST">
+        <div class="modal-body">
+          <h6 class="alert alert-danger text-justify">La siguiente resoluci&oacute;n podria generar la no recuperaci&oacute;n de la informaci&oacute;n que esta a punto de ser desactivada, para poder habilitar a la presente persona de nuevo, debe hablar con el administrador de la base de datos.</h6>
+          <h6 class="text-center">Informaci&oacute;n</h6> 
+          <p>Nombre del archivo: </p>
+          <p>Categor&iacute;a: </p>
+          <p>Ruta: </p>
+            <p>Fecha: </p>
+          </div>
+              <div class="modal-footer">
+                <input type="hidden" name="disable">
+                <input type="hidden" name="id" value="">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <input type="submit" class="btn btn-danger" value="Eliminar">
+              </div>
+      </form>
+      </div>
+    </div>
+  </div>-->

@@ -1,0 +1,165 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top: 100px; margin-bottom: 20px;">
+        <div class="col-lg-12">
+            <h2>Gesti&oacute;n de administradores</h2>
+            <hr>
+            <div class="card">
+            <div class="card-header bg-light">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agregar"><i class="fa fa-plus"></i> Agregar administrador</button>
+            </div>
+            <div class="card-body">
+                <div class="col-lg-12">
+               
+                <table class="table table-bordered" style="width: 100%;" id="tabla">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">C&oacute;digo</th>
+                            <th scope="col">Nombre completo</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Operaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GU161908</td>
+                            <td>Diego Jose Garcia Urquilla</td>
+                            <td>02-10-1998</td>
+                            <td>diego20120298@hotmail.com</td>
+                            <td>DiegoG</td>
+                            <td>
+                                <a href="#" type="button" data-toggle="modal" data-target="#actualizar" class="btn btn-warning"><span class="fa fa-undo"></span> Editar</a>
+                                <a style="margin-left: 10px;" href="#" type="button" data-toggle="modal" data-target="#eliminar" class="btn btn-danger"><span class="fa fa-times"></span> Eliminar</a>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+  <div class="modal fade" id="agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title" id="exampleModalLabel"><span class="fa fa-user-plus"></span> Agregar administrador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <form role="form"  action="" method="POST">
+        <div class="modal-body">
+          <div class="form-group">
+            <label>C&oacute;digo</label>
+            <input type="text" class="form-control" name="codigo" placeholder="Ingresa tu c&oacute;digo" required>
+        </div>
+               <div class="form-group">
+                   <label>Nombre completo</label>
+                   <input type="text" class="form-control" name="nombre" placeholder="Ingresa tu nombre completo" required>
+               </div>
+               <div class="form-group">
+                   <label>Fecha de Nacimiento</label>
+                   <input type="date" class="form-control" name="fecha_nacimiento" value="18-03-2002" max="17-03-2002" required>
+               </div>
+               <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" class="form-control" name="mail" placeholder="Ingresa tu correo electr&oacute;nico" required>
+            </div>
+            <div class="form-group">
+              <label>Usuario</label>
+              <input type="text" class="form-control" name="user" placeholder="Ingresa tu usuario" required>
+          </div>
+               <div class="form-group">
+                   <label>Contraseña</label>
+                   <input type="password" class="form-control" name="contrasena" placeholder="Ingresa tu contraseña" type="password" required>
+               </div>
+          </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <input type="submit" class="btn btn-info" value="Guardar">
+              </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning text-white">
+          <h5 class="modal-title" id="exampleModalLabel"><span class="fa fa-undo"></span> Actualizar administrador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <form role="form"  action="" method="POST">
+        <div class="modal-body">
+          <div class="form-group">
+            <label>C&oacute;digo</label>
+            <input type="text" class="form-control" name="codigo" placeholder="Ingresa tu c&oacute;digo" required>
+        </div>
+               <div class="form-group">
+                   <label>Nombre completo</label>
+                   <input type="text" class="form-control" name="nombre" placeholder="Ingresa tu nombre completo" required>
+               </div>
+               <div class="form-group">
+                   <label>Fecha de Nacimiento</label>
+                   <input type="date" class="form-control" name="fecha_nacimiento" value="18-03-2002" max="17-03-2002" required>
+               </div>
+               <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" class="form-control" name="mail" placeholder="Ingresa tu correo electr&oacute;nico" required>
+            </div>
+            <div class="form-group">
+              <label>Usuario</label>
+              <input type="text" class="form-control" name="user" placeholder="Ingresa tu usuario" required>
+          </div>
+               <div class="form-group">
+                   <label>Contraseña</label>
+                   <input type="password" class="form-control" name="contrasena" placeholder="Ingresa tu contraseña" type="password" required>
+               </div>
+          </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <input type="submit" class="btn btn-warning" value="Actualizar">
+              </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <form role="form"  action="" method="POST">
+        <div class="modal-body">
+          <h6 class="alert alert-danger text-justify">¿Est&aacute; seguro que desea eliminar este administrador?</h6>
+          <h6 class="text-center">Informaci&oacute;n</h6> 
+          <p>C&oacute;digo: </p>  
+          <p>Nombre completo: </p>
+          <p>Fecha de nacimiento: </p>
+          <p>E-mail: </p>
+          <p>Usuario: </p>
+
+          </div>
+              <div class="modal-footer">
+                <input type="hidden" name="disable">
+                <input type="hidden" name="id" value="">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <input type="submit" class="btn btn-danger" value="Eliminar">
+              </div>
+      </form>
+      </div>
+    </div>
+  </div>

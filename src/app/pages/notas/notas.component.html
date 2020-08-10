@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top: 100px; margin-bottom: 20px;">
+        <div class="col-lg-12">
+            <h2>Notas</h2>
+            <hr>
+            <div class="card">
+            <div class="card-header bg-light">
+                Listado de notas
+            </div>
+            <div class="card-body">
+                <div class="col-lg-12">
+               
+                <table class="table table-bordered" style="width: 100%;" id="tabla">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">C&oacute;digo</th>
+                            <th scope="col">Nombre del alumno</th>
+                            <th scope="col">Materia</th>
+                            <th scope="col">Profesor</th>
+                            <th scope="col">Grado</th>
+                            <th scope="col">Nota</th>
+                            <th scope="col">Operaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GU161908</td>
+                            <td>Diego Jose Garcia Urquilla</td>
+                            <td>Lenguaje y Literatura</td>
+                            <td>Jose Miguel Perez</td>
+                            <td>1° grado</td>
+                            <td>8.8</td>
+                            <td>
+                                <a href="#" type="button" data-toggle="modal" data-target="#eliminar" class="btn btn-danger"><span class="fa fa-times"></span> Eliminar</a>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+  <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <form role="form"  action="" method="POST">
+        <div class="modal-body">
+          <h6 class="alert alert-danger text-justify">¿Est&aacute; seguro que desea eliminar esta nota?</h6>
+          <h6 class="text-center">Informaci&oacute;n</h6> 
+          <p>C&oacute;digo: </p>  
+          <p>Nombre del alumno: </p>
+          <p>Materia: </p>
+          <p>Profesor: </p>
+            <p>Grado: </p>
+            <p>Nota: </p>
+          </div>
+              <div class="modal-footer">
+                <input type="hidden" name="disable">
+                <input type="hidden" name="id" value="">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <input type="submit" class="btn btn-danger" value="Eliminar">
+              </div>
+      </form>
+      </div>
+    </div>
+  </div>
